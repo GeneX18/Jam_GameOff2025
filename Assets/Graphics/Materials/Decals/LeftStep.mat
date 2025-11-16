@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Steps
+  m_Name: LeftStep
   m_Shader: {fileID: -6465566751694194690, guid: 866e05c94608b7a43846f3fc95ac6767, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -119,9 +119,9 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Edge2: 0.6
-    - _EmissionPower: 1
+    - _EmissionPower: 3
     - _EnvironmentReflections: 1
-    - _Flip: 0
+    - _Flip: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
