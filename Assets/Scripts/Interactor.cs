@@ -26,12 +26,19 @@ public class Interactor : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+        
         Ray r = new Ray(interactorSource.position, interactorSource.forward);
         if(Physics.Raycast(r, out RaycastHit hitInfo, interactRange))
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                interactObj.Interact();
+                switch (context.phase)
+                {
+                    case InputActionPhase.Performed:
+                        interactObj.Interact();
+                        break;
+
+                }
             }
         }
     }
