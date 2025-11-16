@@ -32,7 +32,7 @@ public class StepsInstancer : MonoBehaviour
 
                 rot.eulerAngles -= new Vector3(0, 0, transform.eulerAngles.y);
 
-                Vector3 pos = transform.localPosition + new Vector3(transform.localPosition.x * (isRightStep == 0 ? 0.005f : -0.005f), 0.05f, 0);
+                Vector3 pos = transform.position + new Vector3(transform.position.x * (isRightStep == 0 ? 0.005f : -0.005f), 0.05f, 0);
                 
                 GameObject step = Instantiate(stepPrefab, pos, rot, null);
 
