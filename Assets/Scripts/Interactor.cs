@@ -1,45 +1,77 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-interface IInteractable
-{
-    public void Interact();
-}
-
 public class Interactor : MonoBehaviour
 {
 
     [SerializeField] private Transform interactorSource;
     [SerializeField] private float interactRange;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Interactable currentInteractable;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        CheckInteraction();
     }
 
     public void Interact(InputAction.CallbackContext context)
     {
-        
-        Ray r = new Ray(interactorSource.position, interactorSource.forward);
-        if(Physics.Raycast(r, out RaycastHit hitInfo, interactRange))
+        if(currentInteractable && context.phase == InputActionPhase.Performed)
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-            {
-                switch (context.phase)
-                {
-                    case InputActionPhase.Performed:
-                        interactObj.Interact();
-                        break;
+            currentInteractable.Interact();
+        }
+    }
 
+    private void CheckInteraction()
+    {
+        RaycastHit hit;
+        Ray r = new Ray(interactorSource.position, interactorSource.forward);
+
+        //se colpisce qualcosa nella visuale del giocatore
+        if (Physics.Raycast(r, out hit, interactRange))
+        {
+            if(hit.collider.tag == "Interactable") //se guardo un oggetto "Interactable"
+            {
+                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+
+                if(newInteractable != currentInteractable)
+                {                
+                    if (newInteractable.enabled)
+                    {
+                        SetNewCurrentInteractable(newInteractable);
+                    }
+                    else //se non lo è
+                    {
+                        DisableCurrentInteractable();
+                    }
                 }
             }
+            else //se non lo è
+            {
+                DisableCurrentInteractable();
+            }
+        }
+        else //se nulla è a portata
+        {
+            DisableCurrentInteractable();
+        }
+    }
+
+    private void SetNewCurrentInteractable(Interactable newInteractable)
+    {
+        DisableCurrentInteractable();
+        currentInteractable = newInteractable;
+        currentInteractable.EnableOutline();
+        HUDController.istance.EnableInteractionText(currentInteractable.message);
+    }
+
+    private void DisableCurrentInteractable()
+    {
+        HUDController.istance.DisableInteractionText();
+        if (currentInteractable)
+        {
+            currentInteractable.DisableOutline();
+            currentInteractable = null;
         }
     }
 }
