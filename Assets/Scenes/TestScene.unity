@@ -1486,19 +1486,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.89117545
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.45365894
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1506,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 53.957
       objectReference: {fileID: 0}
     - target: {fileID: 8863311733731942979, guid: f09b998c39b995c4cbb90aa424a2f2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1916,8 +1916,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572274064}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.48572, y: 1.561, z: -1.6761}
+  m_LocalRotation: {x: 0, y: 0.45365894, z: 0, w: 0.89117545}
+  m_LocalPosition: {x: -36.23862, y: 1.461, z: -1.9962889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4078,7 +4078,7 @@ GameObject:
   - component: {fileID: 964860543}
   - component: {fileID: 964860542}
   - component: {fileID: 964860546}
-  - component: {fileID: 964860545}
+  - component: {fileID: 964860547}
   m_Layer: 0
   m_Name: Wall (27)
   m_TagString: Interactable
@@ -4178,21 +4178,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964860540}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &964860545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964860540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &964860546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4221,6 +4206,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &964860547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964860540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0.1490196, g: 1, b: 0.7262626, a: 0.6}
+  outlineWidth: 8
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &969271561
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,7 +7495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -16.8}
+  m_AnchoredPosition: {x: 0, y: -24}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718190274

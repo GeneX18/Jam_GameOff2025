@@ -3,11 +3,16 @@ using UnityEngine.Rendering.Universal;
 
 public class StepFadeOut : MonoBehaviour
 {
+    /*
     float timer = 0.0f;
     float fadeValue = 1.0f;
+    */
+
+    
 
     void Update()
     {
+        /*
         if (timer < 3.0f)
         {
             timer += Time.deltaTime;
@@ -21,5 +26,8 @@ public class StepFadeOut : MonoBehaviour
         {
             DestroyImmediate(transform.gameObject);
         }
+        */
     }
+
+    
 }
